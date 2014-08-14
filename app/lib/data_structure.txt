@@ -1,0 +1,23 @@
+DBI Postings
+
+All: {
+	
+	posting ID: {
+		"status": "pending" || "active" || "inactive",
+		"username": "the user that created the posting" - something that connect to session user?
+		"play": "Hamlet",
+		"company": "Something for Nothing",
+		"date_start": blah,
+		"date_end": blah,
+		"equity": true || false,
+		"paid": true || false,
+		"info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae libero neque. Donec tellus est, faucibus sit amet suscipit eu, vestibulum ut justo. In tincidunt non justo at dictum. Sed consequat metus vel facilisis adipiscing. Aenean vitae justo eget ante tempor fringilla. Nam nunc purus, mattis at auctor a, iaculis vitae turpis. Proin ac urna et elit adipiscing volutpat. Aenean consequat erat in vehicula posuere. Curabitur turpis lorem, pharetra non commodo sed, pellentesque sed augue. Integer rutrum tortor a nulla pharetra, nec condimentum sem adipiscing. Pellentesque lobortis nunc ut eleifend egestas. Ut et lectus elit. Vestibulum et ante vitae sem feugiat aliquam. Vivamus dignissim vel sem ac luctus."
+	},
+
+	posintg ID {
+		...
+	},
+	
+	...
+
+}
