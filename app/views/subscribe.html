@@ -1,17 +1,19 @@
 <div class="container-fluid">
+	<form name="subscribe" ng-controller="formCtrl">
 	<div class="input-group">
-	  <input type="text" class="form-control" name="firstname" placeholder="first name">
+	  <input type="text" class="form-control" name="firstname" placeholder="first name" required>
 	</div>
+
 	<div class="input-group">
-	  <input type="text" class="form-control" name="lastname" placeholder="last name">
+	  <input type="text" class="form-control" name="lastname" placeholder="last name" required>
 	</div>
+
 	<div class="input-group">
-	  <input type="text" class="form-control" name="email" placeholder="email">
+	  <input type="email" ng-model="text" ng-minlength="6" class="form-control" name="email" placeholder="email" required>
 	</div>
-	<div class="input-group">
-	  <input type="text" class="form-control" name="confirm_email" placeholder="confirm email">
-	</div>
+
 	<div class="input-group">
 		<input type="submit" value="Sign Up">
 	</div>
+	</form>
 </div>

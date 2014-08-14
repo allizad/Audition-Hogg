@@ -31,13 +31,15 @@
     <div class="row-fluid">
       <ul class="nav nav-justified nav-tabs" role="tablist">
         <li><a href="#">Sign In</a></li>
-        <li><a href="#">Subscribe</a></li>
-        <li><a href="#">Post Listing</a></li>
-        <li><a href="#">Search Listings</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/#/subscribe">Subscribe</a></li>
+        <li><a href="/#/pl">Post Listing</a></li>
+        <li><a href="/#/sl">Search Listings</a></li>
+        <li><a href="/#/about">About</a></li>
       </ul>
     </div>
     </div>
+
+    <div class="container" ng-view></div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -45,6 +47,7 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -7,6 +7,16 @@ All: {
 		"username": "the user that created the posting" - something that connect to session user?
 		"play": "Hamlet",
 		"company": "Something for Nothing",
+		"contact": {
+				"name": "Allison",
+				"email": whaddup@somethin.cmo
+			},
+		"location": {
+				"audition_place": "Manor Palace",
+				"address": 700 E 14th St",
+				"zip_code": "78704",
+
+			},
 		"date_start": blah,
 		"date_end": blah,
 		"equity": true || false,
