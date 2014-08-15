@@ -68,13 +68,13 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 		var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
 		var sync = $firebase(ref);
 
-		$scope.comments = sync.$asArray();
+		$scope.postings = sync.$asArray();
 		$scope.username = 'Guest' + Math.floor(Math.random() * 101)
 
 		$scope.submit = function() {
 
-			$scope.comments.$add({
-				play: $scope.username,
+			$scope.postings.$add({
+				play: $scope.play,
 				company: $scope.company,
 				website: $scope.website,
 				contact: {
