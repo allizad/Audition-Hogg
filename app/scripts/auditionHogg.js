@@ -1,8 +1,8 @@
 
 'use strict';
 
-angular.module('auditionHogg', ['ngRoute', 'firebase'])
-	.config(function ($routeProvider, $locationProvider) {
+angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
+	.config(function ($routeProvider, $locationProvider, $datepickerProvider) {
 	    $routeProvider
 	    	.when('/subscribe', {
 	    		templateUrl: "../views/subscribe.html",
@@ -10,7 +10,7 @@ angular.module('auditionHogg', ['ngRoute', 'firebase'])
 	    	})
 	    	.when('/pl', {
 	            templateUrl: '../views/postListing.html',
-	            controller: ''
+	            controller: 'PostListingCtrl'
 	        })
 	        .when('/sl', {
 	        	templateUrl: "../views/searchListing.html",
@@ -23,5 +23,9 @@ angular.module('auditionHogg', ['ngRoute', 'firebase'])
 	        .otherwise({
 	            redirectTo: '/'
 	        });
-	    // $locationProvider.html5Mode(true);
+
+			angular.extend($datepickerProvider.defaults, {
+			  dateFormat: 'dd/MM/yyyy',
+			  startWeek: 1
+			});
 	});
