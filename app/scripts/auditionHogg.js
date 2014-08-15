@@ -24,6 +24,36 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	        });
 	    // $locationProvider.html5Mode(true);
 	})
+//BRING BACKKKKKKKK
+		// .config(function($datepickerProvider) {
+		//   angular.extend($datepickerProvider.defaults, {
+		//   dateFormat: 'dd/MM/yyyy',
+		//   startWeek: 1,trigger:manual
+		//   });
+		//  })
+// ^^^^^^^^^^^^^^^^^^^^^^
+
+	// .controller("Firetube", ["$scope", "$firebase", 
+	// 	function($scope, $firebase) {
+	// 	var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
+	// 	var sync = $firebase(ref);
+
+	// 	$scope.comments = sync.$asArray();
+	// 	$scope.username = 'Guest' + Math.floor(Math.random() * 101)
+
+	// 	$scope.addComment = function(e) {
+	// 		if (e.keyCode != 13) return;
+	// 		console.log($scope.comments)
+
+	// 		$scope.comments.$add({
+	// 			from: $scope.username,
+	// 			body: $scope.newComment
+	// 		});
+	// 		$scope.newComment = "";
+	// 		}
+	// 	}
+	// ])
+
 
 	.controller("Firetube", ["$scope", "$firebase", 
 		function($scope, $firebase) {
@@ -33,16 +63,30 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 		$scope.comments = sync.$asArray();
 		$scope.username = 'Guest' + Math.floor(Math.random() * 101)
 
-		$scope.addComment = function(e) {
-			if (e.keyCode != 13) return;
-			console.log($scope.comments)
+		$scope.submit = function() {
 
 			$scope.comments.$add({
-				from: $scope.username,
-				body: $scope.newComment
+				play: $scope.username,
+				company: $scope.company,
+				website: $scope.website,
+				contact: {
+					name: $scope.name,
+					email: $scope.email
+				},
+				location: {
+					streetAddress: $scope.street,
+					zip: $scope.zip
+				},
+////////////////////////////////////////////////////////////////////////////////////
+				// compensation: $scope.compensation,
+				// equity: $scope.equity,
+////////////////////////////////////////////////////////////////////////////////////
+				information: $scope.information
+
 			});
 			$scope.newComment = "";
 			}
+
 		}
 	]);
 
@@ -52,8 +96,9 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 
 // angular.module("firetube", ["firebase"])
 
-			angular.extend($datepickerProvider.defaults, {
-			  dateFormat: 'dd/MM/yyyy',
-			  startWeek: 1
-			});
-	});
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			// angular.extend($datepickerProvider.defaults, {
+			//   dateFormat: 'dd/MM/yyyy',
+			//   startWeek: 1
+			// });
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
