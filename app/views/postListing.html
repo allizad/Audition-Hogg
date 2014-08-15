@@ -2,7 +2,17 @@
 <div class="containter">
 <h1>Post an Audition Notice</h1>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="Firetube">
+
+<!-- 	<div id="comments">
+		<div class="comment" ng-repeat="comment in comments">
+			<span><b>{{comment.from}}:</b><br/> {{comment.body}}</span>
+		</div> -->
+		<div id="textWrap">
+			<textarea ng-model="newComment" ng-keydown="addComment($event)"></textarea>
+		</div>
+	</div>
+	<div id="textWrap">
 
 	<div class="input-group"> <!-- play title -->
 	  <input type="text" class="form-control" name="play" placeholder="play" required>
@@ -70,14 +80,14 @@
 	<div class="form-group">
 	    <div class="radio">
 	        <label>
-	            <input type="radio" name="paid" value="true" ng-model="" required>
+	            <input type="radio" name="paid" value="true"  required>
 	            Paid
 	        </label>
 	    </div>    
 	
 	    <div class="radio">
 	        <label>
-	            <input type="radio" name="paid" value="false" ng-model="" required>
+	            <input type="radio" name="paid" value="false"  required>
 	            Unpaid
 	        </label>
 	    </div>
@@ -86,14 +96,14 @@
     <div class="form-group">
     	<div class="radio">
     		<label>
-    			<input type="radio" name="equity" value="true" ng-model="">
+    			<input type="radio" name="equity" value="true" >
     			Equity
     		</label>
     	</div>
 		
 		<div class="radio">
     		<label>
-    			<input type="radio" name="equity" value="true" ng-model="">
+    			<input type="radio" name="equity" value="true" >
     			Non-Equity
     		</label>
     	</div>
