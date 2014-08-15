@@ -1,9 +1,9 @@
 
-<div class="containter">
+<div class="container">
 <h2>Post an Audition Notice</h2>
 
-<div class="container" ng-controller="Firetube">
-	<div id="textWrap">
+<div class="container">
+<!-- 	<div id="textWrap">
 		<textarea ng-model="newComment" ng-keydown="addComment($event)"></textarea>
 	</div>
 	<div id="test">
@@ -12,10 +12,9 @@
 		</div>
 		<li ng-repeat="username in username" ng-init="init(all.play)">{{username.username}}</div>
 	</div>
-	<div id="textWrap">
+	<div id="textWrap"> -->
 
-	<form class="form-horizontal" role="form" ng-controll="PostListingCtrl" ng-submit="submit()">
-
+	<form class="form-horizontal" role="form" ng-controller="PostListingCtrl">
 		<div class="form-group">
 			<label for="inputplayPL" class="col-sm-2 control-label">Play</label>
 			<div class="col-sm-10">
@@ -50,13 +49,13 @@
 		<div class="form-group">
 			<label for="locationPL" class="col-sm-2 control-label">Location</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control" id="locationNamePL" placeholder="The Globe" required>
+				<input type="text" ng-model="location" class="form-control" id="locationNamePL" placeholder="The Globe" required>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-5">
-				<input type="email" ng-model="street" class="form-control" id="locationAdressPL" placeholder="100 Congress Ave" required>
+				<input type="text" ng-model="street" class="form-control" id="locationAdressPL" placeholder="100 Congress Ave" required>
 			</div>
 			<div class="col-sm-5">
 				<input type="number" ng-model="zip" class="form-control" min="78700" max="78760" id="locationZipPL" placeholder="78701" required>
@@ -64,19 +63,14 @@
 		</div>
 
 		<div class="form-group">
-			<label for="inputDatePL" class="col-sm-2 control-label">Date</label>
-				<!-- date pickers here -->
-				<div class="col-sm-5 col-md-5 col-lg-5">
-					<div class="input-group date col-md-12">
-						<input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="today" data-autoclose="1" name="date2" id="datepicker1PL" bs-datepicker placeholder="start">
-					</div>
-				</div>
-				<div class="col-sm-5 col-md-5 col-lg-5">
-					<div class="input-group date col-md-12">
-						<input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="today" data-autoclose="1" name="date2" id="datepicker2PL" bs-datepicker placeholder="end">
-					</div>
-				</div>
-		</div>
+            <label for="inputDatePL" class="col-sm-2 control-label">Date range</label>
+            <div class="col-sm-4">
+                  <input type="text" class="form-control" ng-model="startDate" data-max-date="{{endDate}}" placeholder="From" bs-datepicker>
+            </div>
+            <div class="col-sm-4">
+                  <input type="text" class="form-control" ng-model="endDate" data-min-date="{{startDate}}" placeholder="Until" bs-datepicker>
+            </div>
+        </div>
 
 		<div class="form-group">
 			<label for="inputCompPL" class="col-sm-2 control-label">Compensation</label>
@@ -107,7 +101,7 @@
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Post Listing</button>
+				<input type="submit" class="btn btn-default"  ng-click="submitListing()">Post Listing</input>
 			</div>
 		</div>
 

@@ -13,10 +13,43 @@
 	</form>
 	</div>
 
-	<div class="container">
+	<div class="testing" ng-controller="searchListing">
+		<div class="container" ng-repeat="posting in postings">
+			<div class="row">
+				<h3>{{posting.play}}</h3>
+				<p><a href="#">{{posting.company}}</a></p>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<h4>Location</h4>
+					<p>The Off Center</p>
+					<p>{{posting.location.streetAddress}}</p>
+					<p>{{posting.location.zip}}</p>
+					<span><a href="#">direct to google maps here, @media query for small device app</a></span>
+				</div>
+				<div class="col-md-4">
+					<h4>Dates</h4>
+					<p>Monday, Sept 14th, 2014</p>
+					<p>through</p>
+					<p>Tuesday, Sept 24th, 2014</p>
+					<span><a href="#">direct to iCal/google, @media query for small device app</a></span>
+				</div>
+				<div class="col-md-4">
+					<h4>Contact</h4>
+					<p>{{posting.contact.name}}</p>
+					<p><a href="#">{{posting.contact.email}}</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<h4>audition information</h4>
+				<p>{{posting.information}}</p>
+			</div>
+		</div>
+
+	</div>
+
 
 	<div class="listing">
-		
 		<div class="container">
 			<div class="row">
 				<h3>Richard III</h3>

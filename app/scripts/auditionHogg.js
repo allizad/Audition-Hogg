@@ -9,7 +9,7 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	    	})
 	    	.when('/pl', {
 	            templateUrl: '../views/postListing.html',
-	            controller: 'PostListingCtrl'
+	            controller: ''
 	        })
 	        .when('/sl', {
 	        	templateUrl: "../views/searchListing.html",
@@ -55,40 +55,53 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	// ])
 
 
-	.controller("Firetube", ["$scope", "$firebase", 
+	.controller("PostListingCtrl",
 		function($scope, $firebase) {
-		var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
-		var sync = $firebase(ref);
+			var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
+			var sync = $firebase(ref);
 
-		$scope.postings = sync.$asArray();
-		$scope.username = 'Guest' + Math.floor(Math.random() * 101)
+			$scope.comments = sync.$asArray();
+			$scope.username = 'Guest' + Math.floor(Math.random() * 101);
 
-		$scope.submit = function() {
+			$scope.submitListing = function() {
+				console.log("yep");
 
-			$scope.postings.$add({
-				play: $scope.play,
-				company: $scope.company,
-				website: $scope.website,
-				contact: {
-					name: $scope.name,
-					email: $scope.email
-				},
-				location: {
-					streetAddress: $scope.street,
-					zip: $scope.zip
-				},
-////////////////////////////////////////////////////////////////////////////////////
-				// compensation: $scope.compensation,
-				// equity: $scope.equity,
-////////////////////////////////////////////////////////////////////////////////////
-				information: $scope.information
-
-			});
-			$scope.newComment = "";
+				$scope.comments.$add({
+					play: $scope.play,
+					company: $scope.company,
+					website: $scope.website,
+					contact: {
+						name: $scope.name,
+						email: $scope.email
+					},
+					location: {
+						location: $scope.location,
+						streetAddress: $scope.street,
+						zip: $scope.zip
+					},
+					startDate: $scope.startDate,
+					endDate: $scope.endDate,
+	////////////////////////////////////////////////////////////////////////////////////
+					// compensation: $scope.compensation,
+					// equity: $scope.equity,
+	///////////////////////////////////////////////////////////////////////////////////
+					information: $scope.information
+				});
 			}
+	})
+
+	.controller("searchListing",
+		function($scope, $firebase) {
+			var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
+			var sync = $firebase(ref);	
+			
+			var postingsArray = sync.$asArray();
+
+			$scope.postings = postingsArray;
 
 		}
-	]);
+
+		);
 
 // app.controller("PostController", function() {
 // 	this.
