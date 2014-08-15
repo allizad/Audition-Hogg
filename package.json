@@ -1,7 +1,9 @@
 {
   "name": "auditionHogg",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "wiredep": "^1.8.2"
+  },
   "devDependencies": {
     "gulp": "^3.6.0",
     "gulp-autoprefixer": "^0.0.6",
