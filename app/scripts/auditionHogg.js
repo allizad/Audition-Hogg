@@ -3,6 +3,10 @@
 angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	.config(function ($routeProvider, $locationProvider, $datepickerProvider) {
 	    $routeProvider
+	    	.when('/', {
+	    		templateUrl: "../views/main.html",
+	    		controller: ''
+	    	})
 	    	.when('/subscribe', {
 	    		templateUrl: "../views/subscribe.html",
 	    		controller: ''
@@ -18,6 +22,10 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	        .when('/about', {
 	        	templateUrl: "../views/about.html",
 	        	controller: ''
+	        })
+	        .when('/signin', {
+	        	templateUrl: "../views/signin.html",
+
 	        })
 	        .otherwise({
 	            redirectTo: '/'
@@ -100,8 +108,19 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 			$scope.postings = postingsArray;
 
 		}
+<<<<<<< HEAD
 
 		);
+=======
+	])
+
+	.controller('showSignIn', function($scope) {
+
+  		$scope.signIn = false;
+  		$scope.createAcct = false;
+  
+	});
+>>>>>>> fe12ba6fba48538caac3cee48cfbf8c93c38c28a
 
 // app.controller("PostController", function() {
 // 	this.
