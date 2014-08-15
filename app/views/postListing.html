@@ -1,7 +1,8 @@
 
 <div class="containter">
-<h1>Post an Audition Notice</h1>
+<h2>Post an Audition Notice</h2>
 
+<<<<<<< HEAD
 <div class="container-fluid" ng-controller="Firetube">
 
 <!-- 	<div id="comments">
@@ -25,56 +26,84 @@
 	<div class="input-group"> <!-- company website -->
 	  <input type="text" class="form-control" name="company" placeholder="website">
 	</div>
+</div>
 
-	<span>contact information</span>
 
-	<div class="input-group"> <!-- contact name -->
-	  <input type="text" class="form-control" name="name" placeholder="name" required>
-	</div>
+<div class="container">
+	<form class="form-horizontal" role="form" ng-controll="PostListingCtrl">
 
-	<div class="input-group"> <!-- contact email -->
-	  <input type="email" class="form-control" name="email" placeholder="email" required>
-	</div>
-
-	<!-- Audition Location -->
-	<span>location</span>
-
-	<div class="input-group"> <!-- location name -->
-	  <input type="text" class="form-control" name="location_name" placeholder="locale" required>
-	</div>
-
-	<div class="input-group"> <!-- address -->
-	  <input type="text" class="form-control" name="street_adress" placeholder="100 Congress Ave" required>
-	</div>
-
-	<div class="input-group"> <!-- zip_code -->
-	  <input type="number" class="form-control" name="zip_code" min="78700" max="78760" placeholder="78701" required>
-	</div>
-
-	<span>dates:</span>
-	<div class="container"> 
-		<div class="col-sm-6" style="height:75px"> <!-- first calendar form -->
-			<div class="col-md-5">
-				<div class="form-group">
-					<div class="input-group date" id="datetimepicker1">
-						<input type="text" class="form-control" required/>
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-5"> <!-- second calender form -->
-				<div class="form-group">
-					<div class="input-group date" id="datetimepicker2">
-						<input type="text" class="form-control"/>
-						<span class="input-group-addon">
-							<span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
+		<div class="form-group">
+			<label for="inputplayPL" class="col-sm-2 control-label">Play</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputplayPL" placeholder="Hamlet" required>
 			</div>
 		</div>
+		
+		<div class="form-group">
+			<label for="inputcompanyPL" class="col-sm-2 control-label">Company</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputcopmanyPL" placeholder="The King's Men" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputurlPL" class="col-sm-2 control-label">Website</label>
+			<div class="col-sm-10">
+				<input type="url" class="form-control" id="inputurlPL" placeholder="www.auditionhogg.com">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="contactPL" class="col-sm-2 control-label">Contact</label>
+			<div class="col-sm-5">
+				<input type="text" class="form-control" id="contactnamePL" placeholder="Uncle Claudius" required>
+			</div>
+			<div class="col-sm-5">
+				<input type="email" class="form-control" id="contactemailPL" placeholder="snake@denmark.com" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="locationPL" class="col-sm-2 control-label">Location</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="locationNamePL" placeholder="The Globe" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-5">
+				<input type="email" class="form-control" id="locationAdressPL" placeholder="100 Congress Ave" required>
+			</div>
+			<div class="col-sm-5">
+				<input type="number" class="form-control" min="78700" max="78760" id="locationZipPL" placeholder="78701" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputDatePL" class="col-sm-2 control-label">Date</label>
+				<!-- date pickers here -->
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<div class="input-group date col-md-12">
+						<input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="today" data-autoclose="1" name="date2" id="datepicker1PL" bs-datepicker placeholder="start">
+					</div>
+				</div>
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<div class="input-group date col-md-12">
+						<input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="today" data-autoclose="1" name="date2" id="datepicker2PL" bs-datepicker placeholder="end">
+					</div>
+				</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputCompPL" class="col-sm-2 control-label">Compensation</label>
+			<div class="col-md-5">
+  				<select class="col-sm-3 form-control">
+  					<option>Paid</option>
+  					<option>Unpaid</option>
+				</select>
+			</div>
+		</div>
+<<<<<<< HEAD
 	</div>
 	
 	<div class="form-group">
@@ -108,16 +137,32 @@
     		</label>
     	</div>
     </div>
+=======
+>>>>>>> 4c9eafa9c2379e03f4896d25698b0b64877259d0
+
+		<div class="form-group">
+			<label for="inputEquityPL" class="col-sm-2 control-label">Equity</label>
+			<div class="col-md-5">
+  				<select class="col-sm-3 form-control">
+  					<option>Equity</option>
+  					<option>Non-Equity</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputInfoPL" class="col-sm-2 control-label">Audition Information</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows="5"></textarea>
+			</div>
+		</div>
 
 
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Post Listing</button>
+			</div>
+		</div>
 
-	<div class="input-group"> <!-- extra info -->
-		<textarea class="form-control" rows="6" name="info" placeholder="audition information"></textarea required>
-	</div>
-
-	<div class="input-group">
-		<input type="submit" value="Post Listing">
-	</div>
+	</form>
 </div>
-</div>
-<script type="text/javascript" src="../scripts/timepicker.js"></script>
