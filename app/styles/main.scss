@@ -1,18 +1,152 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$pink: #E799A9;
+$dark-pink: #6A2434;
+$dark-gray: #584F54;
+$black: #250F14;
+$mint: #9DC3B6;
+$powder: #DDF7FF;
+$light-blue: #EBF6FF;
+
 
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import "http://weloveiconfonts.com/api/?family=brandico";
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
 }
 
-.thumbnail {
-  height: 200px;
+h1, h2 {
+	font-family: 'Lobster', cursive;
+	padding: 2rem;	
+}
 
-  img.pull-right {
-    width: 50px;
-  }
+h1 a {
+	font-family: 'Lobster', cursive;	
+}
+
+h4 {
+	padding-bottom: 2rem;
+}
+
+h1, h2, h3, h4, h5, a {
+	color: $pink;
+}
+
+h3, h4, h5, h6, p, span, a, input {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.04rem;
+}
+
+a:active {
+	color: $dark-pink;
+}
+
+p {
+	color: $dark-gray;
+}
+
+label.control-label {
+	font-family: 'Open Sans', sans-serif;
+	color: $black;
+}
+
+button.btn {
+	font-family: 'Open Sans', sans-serif;
+	border: 2px solid $pink;
+	color: $pink;
+	&:hover{
+		background-color: $pink;
+		color: white;
+		border-color: $pink;
+	}
+}
+
+div.jumbotron {
+	background-image: url(../images/Austin-TX1.png);
+	background-size: cover;
+	background-position: 85% 25%;
+	h1.logo a {
+		color: white;
+		&:hover{
+			text-decoration: none;
+			color: $dark-gray;
+		}
+	}
+	p {
+		color: #E8FFF9;
+	}
+	span a.btn {
+		color: white;
+		background-color: transparent;
+		border: 2px solid white;
+		font-variant: small-caps;
+		font-size: 2.8rem;
+		&:hover{
+			background-color: white;
+			color: $pink;
+		}
+	}
+}
+
+div.flyer#flyer {
+	background-color: $pink;
+	color: $black;
+	border-radius: 1.5rem;
+	padding: 1rem;
+	padding-bottom: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	h3{
+		color: $dark-gray;
+		font-size: 3rem;
+	}
+	h4, h5{
+		color: white;
+	}
+	a {
+		color: $light-blue;
+		font-size: 1.4rem;
+		&:hover{
+			color: $dark-pink;
+			text-decoration: none;
+		}
+	}
+	h4#h4{
+		font-size: 2.6rem;
+		font-variant: small-caps;
+	}
+	p.info {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+	p a {
+			font-size: 2.2rem;
+	}
+}
+
+div.sign-in {
+	text-align: center;
+	padding-bottom: 2rem;
+	a {
+		h2{
+			color: $dark-pink;
+			padding-bottom: 0;
+		}
+		h4{
+			color: $pink;
+		}
+		h2:hover{
+			color: $pink;
+			text-decoration: none;
+		}
+	}
+}
+
+#icons{
+	span {
+		&:hover{
+			color: $pink;
+		}
+	}
 }
