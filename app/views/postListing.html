@@ -58,18 +58,18 @@
 		<div class="form-group">
     		<label for="inputDatePL" class="col-sm-2 control-label">Date range</label>
     		<div class="col-sm-4">
-      			<input type="text" class="form-control" ng-model="startDate" minDate="{{ today | date : format}}" data-max-date="{{startDate}}" placeholder="From" bs-datepicker>
+      			<input type="text" class="form-control" ng-model="startDate" minDate="{{ today | date : format}}" data-date-format="MM/dd/yyyy" data-max-date="{{endDate}}" placeholder="From" bs-datepicker>
     		</div>
     		<div class="col-sm-4">
-      			<input type="text" class="form-control" ng-model="endDate" data-min-date="{{endDate}}" placeholder="Until" bs-datepicker>
+      			<input type="text" class="form-control" data-date-format="MM/dd/yyyy" ng-model="endDate" data-min-date="{{startDate}}" placeholder="Until" bs-datepicker>
     		</div>
     	</div>
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="inputCompPL" class="col-sm-2 control-label">Compensation</label>
 			<div class="col-md-4">
   				<select class="col-sm-3 form-control">
-  					<option>Paid</option>
-  					<option>Unpaid</option>
+  					<option ng-model="compensation" value="paid">Paid</option>
+  					<option ng-model="compensation" value="unpaid">Unpaid</option>
 				</select>
 			</div>
 		</div>
@@ -77,11 +77,11 @@
 			<label for="inputEquityPL" class="col-sm-2 control-label">Equity</label>
 			<div class="col-md-4">
   				<select class="col-sm-3 form-control">
-  					<option>Equity</option>
-  					<option>Non-Equity</option>
+  					<option ng-model="equity" value="Equity">Equity</option>
+  					<option ng-model="equity" value="Non-Equity">Non-Equity</option>
 				</select>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="form-group">
 			<label for="inputInfoPL" class="col-sm-2 control-label">Audition Information</label>

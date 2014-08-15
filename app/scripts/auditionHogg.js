@@ -4,11 +4,11 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	.config(function ($routeProvider, $locationProvider, $datepickerProvider) {
 	    $routeProvider
 	    	.when('/', {
-	    		templateUrl: "../views/main.html",
+	    		templateUrl: '../views/main.html',
 	    		controller: ''
 	    	})
 	    	.when('/subscribe', {
-	    		templateUrl: "../views/subscribe.html",
+	    		templateUrl: '../views/subscribe.html',
 	    		controller: ''
 	    	})
 	    	.when('/pl', {
@@ -16,15 +16,15 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	            controller: ''
 	        })
 	        .when('/sl', {
-	        	templateUrl: "../views/searchListing.html",
+	        	templateUrl: '../views/searchListing.html',
 	        	controller: ''
 	        })
 	        .when('/about', {
-	        	templateUrl: "../views/about.html",
+	        	templateUrl: '../views/about.html',
 	        	controller: ''
 	        })
 	        .when('/signin', {
-	        	templateUrl: "../views/signin.html",
+	        	templateUrl: '../views/signin.html',
 
 	        })
 	        .otherwise({
@@ -61,20 +61,40 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 	// 		}
 	// 	}
 	// ])
-
-
-	.controller("PostListingCtrl",
+	.controller('SubscribeCtrl',
 		function($scope, $firebase) {
-			var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
+			var ref = new Firebase('https://mkshackathon.firebaseio.com/MailingList');
 			var sync = $firebase(ref);
+			$scope.mailings = sync.$asArray();
 
-			$scope.comments = sync.$asArray();
-			$scope.username = 'Guest' + Math.floor(Math.random() * 101);
+			$scope.submitSubscription = function() {
+				console.log('yay');
 
+				$scope.mailings.$add({
+					firstname: $scope.firstname,
+					lastname: $scope.lastname,
+					email: $scope.email
+				});
+			};
+		})
+
+	.controller('PostListingCtrl',
+		function($scope, $firebase) {
+			var ref = new Firebase('https://mkshackathon.firebaseio.com/Postings');
+			var sync = $firebase(ref);
+			$scope.postings = sync.$asArray();
+
+			// $scope.username = 'Guest' + Math.floor(Math.random() * 101);
+		  // $scope.getType = function(key) {
+		  //   return Object.prototype.toString.call($scope[key]);
+		  // };
+		  // $scope.startDate = new Date();
+		  // $scope.endDate = new Date();
+		  // console.log($scope.getType("startDate"));
 			$scope.submitListing = function() {
-				console.log("yep");
+				console.log('yep');
 
-				$scope.comments.$add({
+				$scope.postings.$add({
 					play: $scope.play,
 					company: $scope.company,
 					website: $scope.website,
@@ -87,24 +107,22 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 						streetAddress: $scope.street,
 						zip: $scope.zip
 					},
-					startDate: $scope.startDate,
-					endDate: $scope.endDate,
+					startDate: $scope.startDate.toDateString(),
+					endDate: $scope.endDate.toDateString(),
 	////////////////////////////////////////////////////////////////////////////////////
 					// compensation: $scope.compensation,
 					// equity: $scope.equity,
 	///////////////////////////////////////////////////////////////////////////////////
 					information: $scope.information
 				});
-			}
+			};
 	})
 
-	.controller("searchListing",
+	.controller('searchListing',
 		function($scope, $firebase) {
-			var ref = new Firebase("https://mkshackathon.firebaseio.com/Postings/All");
+			var ref = new Firebase('https://mkshackathon.firebaseio.com/Postings');
 			var sync = $firebase(ref);	
-			
 			var postingsArray = sync.$asArray();
-
 			$scope.postings = postingsArray;
 
 		})
@@ -114,7 +132,27 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
   		$scope.signIn = false;
   		$scope.createAcct = false;
   
-	});
+	})
+
+	.controller('signupCtrl',
+		function($scope, $firebase) {
+			var ref = new Firebase('https://mkshackathon.firebaseio.com/Users');
+			var sync = $firebase(ref);	
+			$scope.signup = sync.$asArray();
+
+			$scope.submitSignup = function() {
+				console.log('yay');
+
+				$scope.signup.$add({
+					firstname: $scope.firstnameSUP,
+					lastname: $scope.lastnameSUP,
+					email: $scope.email,
+					password: $scope.signInPassword
+				});
+			};
+		});
+
+
 
 // app.controller("PostController", function() {
 // 	this.

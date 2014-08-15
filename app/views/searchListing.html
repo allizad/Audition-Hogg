@@ -7,15 +7,15 @@
 
 			<form class="navbar-form navbar-center" role="search">
   				<div class="form-group">
-    				<input type="text" class="form-control" placeholder="Search">
+    				<input type="search" ng-model="search" class="form-control" placeholder="Search...">
   				</div>
-  				<button type="submit" class="btn btn-default">Submit</button>
+  				<!-- <button type="submit" class="btn btn-default">Submit</button> -->
 			</form>
 
 		</div>
 	</div>
 
-	<div class="testing" ng-controller="searchListing">
+<!-- 	<div >
 		<div class="container" ng-repeat="posting in postings">
 			<div class="row">
 				<h3>{{posting.play}}</h3>
@@ -48,10 +48,43 @@
 			</div>
 		</div>
 
+	</div> -->
+	<div class="container listing testing" ng-controller="searchListing">
+		<div class="container flyer col-md-10 col-md-offset-1" ng-repeat="posting in postings | orderBy: 'startDate' | filter:search">
+			<div class="row text-center">
+				<h3>{{posting.play}}</h3>
+				<p><a href="#">{{posting.company}}</a></p>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-4">
+					<h4>Location</h4>
+					<p>{{posting.location.location}}</p>
+					<p>{{posting.location.streetAddress}}</p>
+					<p>{{posting.location.zip}}</p>
+					<span><a href="#">direct to google maps here, @media query for small device app</a></span>
+				</div>
+				<div class="col-md-4">
+					<h4>Contact</h4>
+					<p>{{posting.contact.name}}</p>
+					<p><a href="#">{{posting.contact.email}}</a></p>
+				</div>
+				<div class="col-md-4">
+					<h4>Dates</h4>
+					<p>{{posting.startDate}}</p>
+					<p>-</p>
+					<p>{{posting.endDate}}</p>
+					<span><a href="#">direct to iCal/google, @media query for small device app</a></span>
+				</div>
+			</div>
+			<div class="row">
+				<h4 class="text-center">audition information</h4>
+				<p>{{posting.information}}</p>
+			</div>
+		</div>
 	</div>
 
 
-	<div class="container listing">
+	<!-- <div class="container listing">
 		<div class="container col-md-10 col-md-offset-1">
 			<div class="row text-center">
 				<h3>Richard III</h3>
@@ -84,5 +117,5 @@
 				<p>The earth some marks of a wagoner As Phaethon would your promises in that ornament to be slave to my friend; And you know not wear the hearts more shall be good, There's yet upon thine only in the pantry, and this afternoon; And there queen So mightily persuaded him from a charnel-house, O'er-cover'd quite overthrown! O love! the matter:--Nurse, give him marry me for your good night!</p>
 			</div>
 		</div>
-	</div>
+	</div> -->
 </div>

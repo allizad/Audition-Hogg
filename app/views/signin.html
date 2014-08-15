@@ -47,7 +47,7 @@
 
     </form>
 
-    <form class="form-horizontal" role="form" ng-show="createAcct">
+    <form class="form-horizontal" ng-controller="signupCtrl" ng-submit="submitSignup()" role="form" ng-show="createAcct">
 
       <div class="form-group">
         <label for="contactPL" class="col-sm-2 col-sm-offset-1 control-label">Name</label>
