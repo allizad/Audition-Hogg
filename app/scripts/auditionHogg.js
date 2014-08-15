@@ -107,12 +107,7 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
 
 			$scope.postings = postingsArray;
 
-		}
-<<<<<<< HEAD
-
-		);
-=======
-	])
+		})
 
 	.controller('showSignIn', function($scope) {
 
@@ -120,7 +115,6 @@ angular.module('auditionHogg', ['ngRoute', 'firebase', 'mgcrea.ngStrap'])
   		$scope.createAcct = false;
   
 	});
->>>>>>> fe12ba6fba48538caac3cee48cfbf8c93c38c28a
 
 // app.controller("PostController", function() {
 // 	this.
